@@ -42,6 +42,18 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'factory_bot_rails'
+  gem 'guard-rspec', require: false
+  gem 'capybara', '>= 3.26'
+  gem 'selenium-webdriver'
+  gem 'parallel_tests'
+  gem 'rspec-mocks'
+  gem 'pry'
+  gem 'spring'
+  gem 'byebug'
+  gem 'pry-rescue'
+  gem 'pry-stack_explorer'
+  gem 'spring-commands-rspec'
 end
 
 group :test do
