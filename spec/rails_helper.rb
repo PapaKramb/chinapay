@@ -1,5 +1,3 @@
-# spec/rails_helper.rb
-
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 # require 'simplecov'
 # SimpleCov.start 'rails'
@@ -11,7 +9,7 @@ require 'spec_helper'
 require 'rspec/rails'
 require "action_policy/rspec/dsl"
 require 'vcr'
-require "view_component/test_helpers"
+# require "view_component/test_helpers"
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -61,6 +59,7 @@ module ViewSpecHelper
 end
 
 RSpec.configure do |config|
+  config.include FactoryBot::Syntax::Methods
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -81,7 +80,7 @@ RSpec.configure do |config|
     #   (example.metadata[:type] == :request)
 
     # Configure helper for components testing
-    config.include ViewComponent::TestHelpers, type: :component
+    # config.include ViewComponent::TestHelpers, type: :component
     config.include Capybara::RSpecMatchers, type: :component
   end
 
