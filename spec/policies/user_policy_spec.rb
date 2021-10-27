@@ -9,6 +9,18 @@ RSpec.describe UserPolicy, type: :policy do
       before { user.role = :admin }
     end
 
-    failed 'when user is client'
+    failed 'when user is not admin' do
+      before { user.role != :admin }
+    end
+  end
+
+  describe_rule :destroy? do
+    succeed 'when user is admin' do
+      before { user.role = :admin }
+    end
+
+    failed 'when user is not admin' do
+      before { user.role != :admin }
+    end
   end
 end
