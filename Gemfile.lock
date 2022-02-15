@@ -349,6 +349,7 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_bot_rails
+  ffi (~> 1.15)
   guard-rails
   guard-rspec
   i18n-tasks
