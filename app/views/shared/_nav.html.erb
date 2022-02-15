@@ -63,7 +63,22 @@
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           </ul>
           <div class="header-nav-right">
-            <div class="header-nav-search">
+            <% if user_signed_in? %>
+            <div class="header-btn">
+              <%= link_to current_user.email, root_path, class: "btn btn-outline-warning" %>
+            </div>
+            <div class="header-btn">
+              <%= link_to 'Выйти', destroy_user_session_path, method: :delete, class: "btn btn-outline-warning" %>
+            </div>
+            <% else %>
+            <div class="header-btn">
+              <%= link_to 'Вход', new_user_session_path, class: "btn btn-outline-warning" %>
+            </div>
+            <div class="header-btn">
+              <%= link_to 'Регистрация', new_user_registration_path, class: "btn btn-outline-warning" %>
+            </div>
+            <% end %>
+            <%# <div class="header-nav-search">
               <a href="#" class="search-box-outer"><i class="far fa-search"></i></a>
             </div>
             <div class="header-btn">
@@ -71,7 +86,7 @@
             </div>
             <div class="header-btn">
               <a href="#" class="theme-btn">Регистрация<i class="far fa-arrow-right"></i></a>
-            </div>
+            </div> %>
           </div>
         </div>
       </div>
