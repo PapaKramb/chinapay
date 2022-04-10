@@ -1,0 +1,95 @@
+<header class="header">
+  <div class="header-top">
+    <div class="container">
+      <div class="header-top-wrapper">
+        <div class="header-top-left">
+          <div class="header-top-contact">
+            <ul>
+              <li><a href="#"><i class="far fa-map-marker-alt"></i>25/B Milford Road, New York</a>
+              </li>
+              <li><a href="tel:+21236547898"><i class="far fa-phone"></i>+2 123 654 7898</a></li>
+              <li><a href="/cdn-cgi/l/email-protection#96fff8f0f9d6f3eef7fbe6faf3b8f5f9fb"><i class="far fa-envelope"></i><span class="__cf_email__" data-cfemail="3a53545c557a5f425b574a565f14595557">[email&#160;protected]</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="header-top-right">
+          <div class="header-top-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-navigation">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <%= image_tag "logo/logo.png", class: "logo-display", alt: "logo" %>
+          <%= image_tag "logo/logo-dark.png", class: "logo-scrolled", alt: "logo" %>
+          <%# <img src="assets/img/logo/logo.png" class="logo-display" alt="logo">
+          <img src="assets/img/logo/logo-dark.png" class="logo-scrolled" alt="logo"> %>
+        </a>
+        <div class="mobile-menu-right">
+          <a href="#" class="mobile-search-btn search-box-outer"><i class="far fa-search"></i></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><i class="far fa-stream"></i></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="main_nav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Home</a>
+                <ul class="dropdown-menu fade-up">
+                <li><a class="dropdown-item" href="index.html">Home Page 01</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="about.html"> About </a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
+              <ul class="dropdown-menu fade-up">
+                <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Blog</a>
+              <ul class="dropdown-menu fade-up">
+                <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+          <div class="header-nav-right">
+            <% if user_signed_in? %>
+            <div class="header-btn">
+              <%= link_to current_user.email, root_path, class: "btn btn-outline-warning" %>
+            </div>
+            <div class="header-btn">
+              <%= link_to 'Выйти', destroy_user_session_path, method: :delete, class: "btn btn-outline-warning" %>
+            </div>
+            <% else %>
+            <div class="header-btn">
+              <%= link_to 'Вход', new_user_session_path, class: "btn btn-outline-warning" %>
+            </div>
+            <div class="header-btn">
+              <%= link_to 'Регистрация', new_user_registration_path, class: "btn btn-outline-warning" %>
+            </div>
+            <% end %>
+            <%# <div class="header-nav-search">
+              <a href="#" class="search-box-outer"><i class="far fa-search"></i></a>
+            </div>
+            <div class="header-btn">
+              <a href="#" class="theme-btn">Вход<i class="far fa-arrow-right"></i></a>
+            </div>
+            <div class="header-btn">
+              <a href="#" class="theme-btn">Регистрация<i class="far fa-arrow-right"></i></a>
+            </div> %>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
